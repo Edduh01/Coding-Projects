@@ -14,3 +14,11 @@ menuBtn.onclick /*one event*/ = function () {
   }
 };
 // happening quickly. Add transition in css
+
+// smooth scroll below to initialize
+var scroll = new SmoothScroll('a[href*="#"]');
+// All animations will take exactly 500ms speed
+var scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 100,
+  speedAsDuration: true,
+});

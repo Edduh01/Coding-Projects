@@ -57,14 +57,14 @@ p {
 .col-2 h1 {
   font-size: 50px;
   line-height: 60px;
-  margin: 25px;
+  margin: 25px 0;
 }
 .col-2 p {
   margin-left: 25px;
 }
 
 /*design header button explore now*/
-.btn {
+.store-btn {
   display: inline-block;
   background: #ff523b;
   color: #fff;
@@ -74,7 +74,7 @@ p {
   border-radius: 30px;
   transition: background 0.5s; /*below I have specified the change in button color when hover. this transition will delay color change by 0.5 sec*/
 }
-.btn:hover {
+.store-btn:hover {
   background: #563434;
 }
 .header {
@@ -95,9 +95,12 @@ p {
 .col-3 img {
   width: 100%; /*utilize full col-3 width which has min-width of 250 px*/
 }
+
+
+
 /*featured products*/
 /*small container edit whole section consist of rows*/
-.small container {
+.small-container {
   max-width: 1080px;
   margin: auto; /*make images in center*/
   padding-left: 25px;
@@ -115,7 +118,7 @@ p {
   width: 100%; /*each image occupies full column width*/
 }
 /*for title class consist of heading of feature products*/
-.title {
+.store-title {
   text-align: center;
   margin: 0px auto 80px;
   position: relative;
@@ -124,7 +127,7 @@ p {
 }
 
 /*to make divider after featured products heading*/
-.title::after {
+.store-title::after {
   /*after is used to place something after anything*/
   content: ""; /*will place divider after title content*/
   background: #ff523b; /*color of divider*/
@@ -170,6 +173,9 @@ small {
   display: block;
   margin-left: 25px;
 }
+
+
+
 /*testimonial*/
 .testimonial {
   padding-top: 100px;
@@ -177,7 +183,7 @@ small {
 .testimonial .col-3 {
   text-align: center;
   padding: 40px 20px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); /*it will add shadow to each column like a box*/
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2); /*it will add shadow to each column like a box*/
   cursor: pointer; /*it convert cursor to shape pointer when moving cursor over testimonials*/
   transition: transform 0.5s; /*for hover effect*/
 }
@@ -206,6 +212,10 @@ small {
   color: #555;
   font-size: 16px;
 }
+
+
+
+
 /*brands*/
 .brands {
   margin: 100px auto;
@@ -221,6 +231,9 @@ small {
 .col-5 img:hover {
   filter: grayscale(0); /*when hover on brands, it will remove gray color*/
 }
+
+
+
 /*designing footer*/
 .footer {
   background: #000; /*footer background color is black*/
@@ -317,6 +330,12 @@ ul {
     cursor: pointer;
   }
 }
+
+
+
+
+
+
 /*All prodcuts page*/
 .row-2 {
   justify-content: space-between; /*create some space heading and selection panel*/
@@ -329,10 +348,10 @@ select {
 select:focus {
   outline: none; /*the issue was when create red border above, it shows red border but upon selecting other option it again becomes black, so we set outline none upon clicking and for clicking or tabing, focus is used*/
 }
-.page-btn {
+.page-store-btn {
   margin: 0 auto 80px;
 }
-.page-btn span {
+.page-store-btn span {
   /*desigining pages no button which we have made using span tag*/
   display: inline-block;
   border: 1px solid #ff523b;
@@ -343,7 +362,7 @@ select:focus {
   line-height: 40px;
   cursor: pointer;
 }
-.page-btn span:hover {
+.page-store-btn span:hover {
   /*adds hover effect to page btn*/
   background: #ff523b;
   color: #ffff;
@@ -430,7 +449,7 @@ td input {
 }
 td a {
   color: #ff523b;
-  ffont-size: 12px;
+  font-size: 12px;
 }
 td img {
   width: 80px;
@@ -471,7 +490,7 @@ th:last-child {
   text-align: center;
   padding: 20px 0;
   margin: auto;
-  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 3);
   overflow: hidden;
 }
 .form-container span {
@@ -482,7 +501,7 @@ th:last-child {
   width: 100px;
   display: inline-block;
 }
-.form-btn {
+.form-store-btn {
   display: inline-block;
 }
 .form-container form {
@@ -499,13 +518,13 @@ form input {
   padding: 0 10px;
   border: 1px solid #ccc;
 }
-form .btn {
+form .store-btn {
   width: 100%;
   border: none;
   cursor: pointer;
   margin: 10px 0;
 }
-form .btn:focus {
+form .store-btn:focus {
   outline: none;
 }
 #LoginForm {

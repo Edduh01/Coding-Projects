@@ -134,7 +134,7 @@ section .girl {
 }
 
 .login .group a:nth-child(2) {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .leaves {

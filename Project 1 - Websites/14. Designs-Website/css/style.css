@@ -1,0 +1,199 @@
+:root {
+    --blue-color: #031633;
+    --green-color:  #33d1cc;
+    --yellow-color:#FFAB00; 
+    --dark-color: black ;
+    --section-color: #eff7fa;
+  }
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.navbar {
+    background-color: var(--blue-color);
+}
+.navbar-brand p{
+    font-size: 20px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.nav-link{
+    color: white;
+    font-weight: 2rem;
+}
+.navbar-toggler {
+    color: white;
+    font-size: 25px;
+    border-color: white;
+}
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .navbar .navbar-toggler[aria-expanded="true"] {
+    border-color: var(--green-color);
+  }
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  color: var(--green-color);
+}
+.search {
+    border-left: 1px solid var(--green-color);
+}
+.navbar .search svg {
+    color: var(--green-color);
+  }
+.main-btn {
+    background-color: var(--yellow-color);
+    color: var(--blue-color);
+    padding: 0.5rem 1rem;
+}
+.main-btn:hover {
+    color: var(--yellow-color);
+  }
+.srch {
+    color: var(--green-color);
+    
+}
+
+.landing {
+    width: 100%;
+    min-height: calc(100vh - 72px);
+    background-color: var(--blue-color);
+}
+
+.main-box::after{
+    content: "";
+    width: 120px;
+    height: 2px;
+    background-color: var(--green-color);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.feat .icon-holder {
+    height: 200px;
+  }
+  .features .icon-holder svg {
+    left: 50%;
+    transform: translateX(-50%);
+  }  
+.feat .icon-holder .number {
+    color: var(--section-color);
+    font-size: 12rem;
+}
+.features .icon-holder .icon {
+    color: var(--green-color);
+  }
+  .features .feat h4 {
+    color: var(--dark-color);
+  }
+.blogs {
+    background-color: var(--section-color);
+}  
+.blogs ul li {
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+.blogs ul li.active{
+color: var(--dark-color);
+background-color: var(--yellow-color);
+}
+.blogs ul li:not(.active):hover {
+    color: var(--yellow-color);
+}
+.blogs .box {
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.blogs .box::before{
+    content: attr(data-work);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    position: absolute;
+    background-color: rgb(51 209 204 / 76%);
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: 0.3s;
+    transform: translateX(calc(-100% - 5px));
+}
+.blogs .box:hover::before{
+    transform: translateX(0);
+}
+
+.stuff .pp{
+    max-width: 500px;
+    margin: auto;
+}
+
+.team {
+    background-color: var(--section-color);
+}
+.team h3{
+    color: var(--dark-color);
+}
+.team h4{
+    background-color: var(--green-color);
+}
+.start-project {
+    background-color: var(--blue-color);
+}
+.card .card-text{
+    font-size: 20px;
+    line-height: 1.2;
+}
+.real-blogs .row img{
+    overflow: hidden;
+}
+.subsc {
+    background-color: var(--dark-color);
+}
+
+.subsc .btn {
+    background-color: var(--blue-color);
+    color: var(--dark-color);
+}
+.subsc input[type="text"] {
+    border: none;
+    border-bottom: 1px solid white;
+}
+.subsc input[type="text"]:focus{
+    outline: none;
+}
+.subsc input[type="submit"]{
+    background-color: var(--yellow-color);
+  color: var(--dark-color);
+}
+.subsc ::placeholder{
+    color: white;
+}
+.footer {
+    background-color: var(--blue-color);
+}
+.info .copywrite > span{
+    color: var(--green-color);
+}
+.info .copywrite div span {
+    color: var(--yellow-color);
+}
+.footer .contact ul svg {
+    width: 20px;
+    height: 20px;
+  }
+.facebook {
+    background-color: #1877f2;
+}
+.twitter {
+    background-color: #1da1f2;
+}
+.footer .linkedin {
+    background-color: #0077b5;
+  }
+.footer .youtube {
+    background-color: #ff0000;
+}

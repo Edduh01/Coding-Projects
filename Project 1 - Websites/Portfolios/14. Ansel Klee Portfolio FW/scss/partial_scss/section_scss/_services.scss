@@ -1,0 +1,123 @@
+.services{
+    &__card-container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding-top: 1rem;
+        @include breakpoint-down(x-small){
+            grid-template-columns: 165px;
+            justify-content: center;
+        }
+        @include breakpoint-up(small){
+            grid-template-columns: repeat(2, 185px);
+            justify-content: center;
+        }
+        @include breakpoint-up(medium){
+            grid-template-columns: repeat(3, 180px);
+        }
+        @include breakpoint-up(large){
+            grid-template-columns: repeat(3, 192px);
+        }
+        @include breakpoint-up(x-large){
+            grid-template-columns: repeat(3, 220px);
+        }
+    }
+    &__card{
+        background-color: var(--container-color);
+        padding: 3rem 1.5rem 1.5rem;
+        border-radius: 1.5rem;
+        @include breakpoint-up(x-large){
+            padding: 3.2rem 2rem 2rem;
+        }
+    }
+    &__title{
+        font-size: var(--h3-font-size);
+        margin-bottom: 2.5rem;
+    }
+    &__button{
+        font-size: var(--small-font-size);
+        color: var(--first-color);
+        display: flex;
+        align-items: center;
+        column-gap: 0.25rem;
+        cursor: pointer;
+        &:hover{
+            .services__icon{
+                transform: translateX(0.25rem);
+            }
+        }
+    }
+    &__icon{
+        font-size: 1rem;
+        @include transition-ease;
+    }
+    // Services Modal
+    &__modal{
+        position: fixed;
+        inset: 0;
+        background-color: hsla(var(--second-hue), 28%, 16%, 0.7);
+        padding: 2rem 1rem;
+        display: grid;
+        place-items: center;
+        visibility: hidden;
+        opacity: 0;
+        @include transition-ease;
+        z-index: var(--z-modal);
+        &-content{
+            position: relative;
+            background-color: var(--container-color);
+            padding: 4.5rem 2.5rem 1.5rem;
+            border-radius: 1.5rem;
+            @include breakpoint-up(small){
+                width: 500px;
+                padding: 4.5rem 2.5rem 2.5rem;
+            }
+        }
+        &-close{
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            @include transition-ease;
+            &:hover{
+                color: var(--first-color);
+                cursor: pointer;
+            }
+        }
+        &-title,
+        &-description{
+            text-align: center;
+        }
+        &-title{
+            font-size: var(--h3-font-size);
+            color: var(--first-color);
+            margin-bottom: 1rem;
+        }
+        &-description{
+            font-size: var(--small-font-size);
+            margin-bottom: 2rem;
+            @include breakpoint-up(small){
+                padding: 0 3.5rem;
+            }
+        }
+        &-list{
+            display: grid;
+            row-gap: 0.75rem;
+        }
+        &-item{
+            display: flex;
+            align-items: flex-start;
+            column-gap: 0.5rem;
+        }
+        &-icon{
+            font-size: 1.5rem;
+            color: var(--first-color);
+        }
+        &-info{
+            font-size: var(--small-font-size);
+        }
+        &.active-modal{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

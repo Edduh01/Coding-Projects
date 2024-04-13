@@ -1,0 +1,139 @@
+.home{
+    &__container{
+        position: relative;
+        row-gap: 4.5rem;
+        padding-top: 2rem;
+        @include breakpoint-up(large){
+            grid-template-columns: repeat(2, max-content);
+            justify-content: center;
+            align-items: center;
+            column-gap: 14rem;
+            padding-top: 0;
+        }
+    }
+    &__content{
+        text-align: center;
+    }
+    &__greetings,
+    &__education{
+        font-size: var(--small-font-size);
+        font-weight: var(--medium);
+    }
+    &__greetings{
+        display: block;
+        color: var(--title-color);
+        margin-bottom: 0.25rem;
+    }
+    &__education{
+        color: var(--text-color);
+        margin-bottom: 2.5rem;
+    }
+    &__name{
+        font-size: var(--biggest-font-size);
+    }
+    &__buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.25rem;
+        @include breakpoint-down(x-small){
+            flex-direction: column;
+        }
+    }
+    &__img{
+        width: 190px;
+        @include breakpoint-down(x-small){
+            width: 160px;
+        }
+        @include breakpoint-up(large){
+            width: 220px;
+        }
+        @include breakpoint-up(x-large){
+            width: 240px;
+        }
+    }
+    &__handle{
+        width: 200px;
+        height: 340px;
+        justify-self: center;
+        background: linear-gradient(180deg,
+                    hsla(var(--first-hue), var(--sat), var(--lig), 1),
+                    hsla(var(--first-hue), var(--sat), var(--lig), 0.2)
+                    );
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border-radius: 10rem 10rem 1rem 1rem;
+        @include breakpoint-down(x-small){
+            width: 150px;
+            height: 270px;
+        }
+        @include breakpoint-up(large){
+            width: 230px;
+            height: 390px;
+        }
+        @include breakpoint-up(x-large){
+            width: 270px;
+            height: 435px;
+        }
+    }
+    &__social,
+    &__scroll{
+        position: absolute;
+    }
+    &__social{
+        bottom: 5rem;
+        left: 0;
+        display: grid;
+        row-gap: 0.5rem;
+        &-link{
+            width: max-content;
+            font-size: 1rem;
+            color: var(--first-color);
+            background-color: var(--container-color);
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            display: flex;
+            @include transition-ease;
+            @include breakpoint-up(large){
+                font-size: 1.25rem;
+                padding: 0.4rem;
+            }
+            &:hover{
+                color: #fff;
+                background-color: var(--first-color);
+            }
+        }
+        &::after{
+            content: '';
+            width: 32px;
+            height: 2px;
+            background-color: var(--first-color);
+            transform: rotate(90deg) translate(16px, 3px);
+            @include breakpoint-up(large){
+                transform: rotate(90deg) translate(16px, 0);
+            }
+        }
+    }
+    &__scroll{
+        right: 0;
+        bottom: 4rem;
+        color: var(--first-color);
+        display: grid;
+        row-gap: 2.25rem;
+        justify-items: center;
+        &-icon{
+            font-size: 1.25rem;
+            @include breakpoint-up(large){
+                font-size: 1.75rem;
+            }
+            @include breakpoint-up(x-large){
+                font-size: 2rem;
+            }
+        }
+        &-name{
+            font-size: var(--smaller-font-size);
+            transform: rotate(90deg);
+        }
+    }
+}

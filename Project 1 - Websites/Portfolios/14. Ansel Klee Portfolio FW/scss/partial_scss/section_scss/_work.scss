@@ -1,0 +1,85 @@
+.work{
+    &__container{
+        padding-top: 1rem;
+        @include breakpoint-up(small){
+            justify-content: center;
+        }
+        @include breakpoint-up(medium){
+            grid-template-columns: repeat(2, max-content);
+        }
+        @include breakpoint-up(large){
+            gap: 3rem;
+        }
+        @include breakpoint-up(x-large){
+            grid-template-columns: repeat(3, max-content);
+        }
+    }
+    &__filters{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.75rem;
+        padding-bottom: 2rem;
+        @include breakpoint-down(x-small){
+            column-gap: 0.25rem;
+        }
+    }
+    &__item{
+        font-weight: var(--medium);
+        color: var(--title-color);
+        padding: 0.25rem 0.75rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        @include transition-ease;
+        @include breakpoint-down(x-small){
+            font-size: var(--small-font-size);
+        }
+        &:hover{
+            color: var(--first-color);
+        }
+        &.active-work{
+            background-color: var(--first-color);
+            color: var(--body-color);
+        }
+    }
+    &__card{
+        background-color: var(--container-color);
+        padding: 1rem;
+        border-radius: 1rem;
+        @include breakpoint-up(large){
+            padding: 1.25rem;
+        }
+    }
+    &__img{
+        border-radius: 1rem;
+        margin-bottom: 0.75rem;
+        @include breakpoint-up(small){
+            width: 295px;
+        }
+        @include breakpoint-up(large){
+            margin-bottom: 1rem;
+        }
+    }
+    &__title{
+        font-size: var(--normal-font-size);
+        font-weight: var(--medium);
+        margin-bottom: 0.5rem;
+    }
+    &__button{
+        width: max-content;
+        font-size: var(--normal-font-size);
+        color: var(--first-color);
+        display: flex;
+        align-items: center;
+        column-gap: 0.25rem;
+        &:hover{
+            .work__icon{
+                transform: translateX(0.25rem);
+            }
+        }
+    }
+    &__icon{
+        font-size: 1rem;
+        @include transition-ease;
+    }
+}

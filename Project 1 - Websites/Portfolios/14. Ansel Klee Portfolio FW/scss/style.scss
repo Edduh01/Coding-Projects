@@ -1,0 +1,69 @@
+/*
+==================== 
+Template Name : Portfolio Website - 1 
+Template URI : 
+Description :
+Author : Rakib Hasan
+Author URI : https://www.facebook.com/profile.php?id=100034617150269
+Version : 2.0
+====================
+*/
+/*
+------------------------------
+None Index SCSS File
+01. Template Variables
+02. Template Mixin
+------------------------------
+*/
+// 01. Template Variables
+@import "./partial_scss/components_scss/variable";
+// 02. Template Mixin
+@import "./partial_scss/components_scss/mixin";
+/*
+------------------------------
+SCSS File Index
+01. Template Default SCSS
+02. Header SCSS
+03. Home SCSS
+04. About SCSS
+05. Skills SCSS
+06. Services SCSS
+07. Work SCSS
+08. Testimonial.SCSS
+09. Contact SCSS
+10. Footer SCSS
+11. Light Theme SCSS
+------------------------------
+*/
+/* ======== 01. Template Default SCSS ======== */
+@import "./partial_scss/components_scss/global";
+
+/* ======== 02. Header SCSS ======== */
+@import "./partial_scss/section_scss/header";
+
+/* ======== 03. Home SCSS ======== */
+@import "./partial_scss/section_scss/home";
+
+/* ======== 04. About SCSS ======== */
+@import "./partial_scss/section_scss/about";
+
+/* ======== 05. Skills SCSS ======== */
+@import "./partial_scss/section_scss/skills";
+
+/* ======== 06. Services SCSS ======== */
+@import "./partial_scss/section_scss/services";
+
+/* ======== 07. Work SCSS ======== */
+@import "./partial_scss/section_scss/work";
+
+/* ======== 08. Testimonial SCSS ======== */
+@import "./partial_scss/section_scss/testimonial";
+
+/* ======== 09. Contact SCSS ======== */
+@import "./partial_scss/section_scss/contact";
+
+/* ======== 10. Footer SCSS ======== */
+@import "./partial_scss/section_scss/footer";
+
+/* ======== 11. Light Theme SCSS ======== */
+@import "./partial_scss/components_scss/light-theme";

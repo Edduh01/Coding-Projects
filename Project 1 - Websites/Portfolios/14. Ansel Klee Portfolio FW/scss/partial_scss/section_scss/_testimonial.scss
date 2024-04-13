@@ -1,0 +1,47 @@
+.testimonial{
+    &__container{
+        @include breakpoint-up(large){
+            width: 850px;
+            margin: 0 auto;
+        }
+        @include breakpoint-up(x-large){
+            width: 950px;
+        }
+    }
+    &__card{
+        background-color: var(--container-color);
+        padding: 1.25rem 1.5rem;
+        border-radius: 1.5rem;
+        margin-bottom: 2rem;
+        @include breakpoint-up(large){
+            padding: 1.5rem 2.5rem;
+        }
+        &-img{
+            width: 60px;
+            border-radius: 3rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            display: flex;
+        }
+        &-name{
+            font-size: var(--normal-font-size);
+            font-weight: var(--medium);
+            margin-bottom: 0.25rem;
+        }
+        &-description{
+            font-size: var(--small-font-size);
+        } 
+    }
+    // Swiper Class
+    .swiper-pagination{
+        bottom: 0;
+        &-bullet{
+            background-color: var(--text-color);
+            &-active{
+                background-color: var(--first-color);
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,85 @@
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    @include transition-ease; // For light mode
+    z-index: var(--z-fixed);
+    // Header Scrolled
+    &-scrolled{
+        background-color: var(--body-color);
+        box-shadow: 0 4px 4px hsla(0, 0, 4%, 0.3);
+    }
+    .nav{
+        height: var(--header-height);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        @include breakpoint-up(large){
+            height: calc(var(--header-height) + 1rem);
+        }
+        &__logo{
+            font-size: var(--h2-font-size);
+            font-weight: var(--medium);
+            color: var(--first-color);
+            @include transition-ease;
+            &:hover{
+                color: var(--first-color-alt);
+            }
+        }
+        &__menu{
+            position: fixed;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+            padding: 1rem 2.25rem;
+            border-radius: 4rem;
+            backdrop-filter: blur(10px);
+            @include transition-ease;
+            @include breakpoint-down(x-small){
+                padding: 1rem 1.5rem;
+            }
+            @include breakpoint-up(small){
+                width: 380px;
+            }
+            &-list{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            &-link{
+                font-size: 1.25rem;
+                color: var(--text-color);
+                padding: 0.4rem;
+                border-radius: 5rem;
+                display: flex;
+                // Active Link
+                &.active-link{
+                    color: var(--text-color);
+                    background: linear-gradient(180deg,
+                                      hsla(var(--first-hue), var(--sat), var(--lig), 1),
+                                      hsla(var(--first-hue), var(--sat), var(--lig), 0.2)
+                                      );
+                    box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), 0.24);
+                    
+                }
+                
+            }
+        }
+    }
+    // Theme Button
+    .change-theme{
+        font-size: 1.25rem;
+        cursor: pointer;
+        transition: 0.3s;
+        @include breakpoint-up(x-large){
+            font-size: 1.5rem;
+        }
+        &:hover{
+            color: var(--first-color);
+        }
+    }
+}

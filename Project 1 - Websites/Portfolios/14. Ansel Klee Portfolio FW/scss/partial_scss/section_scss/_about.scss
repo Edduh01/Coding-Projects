@@ -1,0 +1,88 @@
+.about{
+    &__container{
+        row-gap: 2.5rem;
+        @include breakpoint-up(large){
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            justify-content: center;
+            column-gap: 4rem;
+        }
+        @include breakpoint-up(x-large){
+            width: 992px;
+            column-gap: 6rem;
+        }
+    }
+    &__handle{
+        width: 220px;
+        justify-self: center;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        display: flex;
+        @include breakpoint-up(large){
+            width: 350px;
+        }
+        @include breakpoint-up(x-large){
+            // justify-self: flex-end;
+        }
+    }
+    &__content{
+        text-align: center;
+        @include breakpoint-up(large){
+            text-align: initial;
+        }
+    }
+    &__info{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        @include breakpoint-down(x-small){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint-up(small){
+            grid-template-columns: repeat(3, 160px);
+            justify-content: center;
+        }
+        @include breakpoint-up(large){
+            justify-content: initial;
+        }
+        @include breakpoint-up(x-large){
+            gap: 1rem;
+        }
+    }
+    &__box{
+        background-color: var(--container-color);
+        padding: 0.75rem 0.5rem;
+        border-radius: 0.75rem;
+        @include breakpoint-up(large){
+            text-align: center;
+            padding: 1rem 1.25rem;
+        }
+        @include breakpoint-up(x-large){
+            padding: 1.25rem 1.25rem;
+        }
+        &-icon{
+            font-size: 1.25rem;
+            color: var(--first-color);
+            margin-bottom: 0.5rem;
+            @include breakpoint-up(x-large){
+                font-size: 1.5rem;
+            }
+        }
+        &-title{
+            font-size: var(--small-font-size);
+        }
+        &-subtitle{
+            font-size: var(--smaller-font-size);
+        }
+    }
+    &__description{
+        margin-bottom: 2rem;
+        @include breakpoint-up(small){
+            padding: 0 5rem;
+        }
+        @include breakpoint-up(large){
+            padding: 0 4rem 0 0;
+        }
+    }
+}

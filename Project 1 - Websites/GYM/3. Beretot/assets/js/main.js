@@ -1,494 +1,184 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/*=============== SHOW MENU ===============*/
+const navMenu = document.getElementById('nav-menu'),
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close')
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+/*===== MENU SHOW =====*/
+/* Validate if constant exists */
+if(navToggle){
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.add('show-menu')
+    })
+}
 
-        <!--=============== REMIXICON ===============-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+/*===== MENU HIDDEN =====*/
+/* Validate if constant exists */
+if(navClose){
+    navClose.addEventListener('click', () =>{
+        navMenu.classList.remove('show-menu')
+    })
+}
 
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+/*=============== REMOVE MENU MOBILE ===============*/
+const navLink = document.querySelectorAll('.nav__link')
 
-        <title>Responsive gym website - Bedimcode</title>
-    </head>
-    <body>
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav__logo">
-                    <img src="assets/img/logo-nav.png" alt="logo"> BEROTOT
-                </a>
+const linkAction = () =>{
+    const navMenu = document.getElementById('nav-menu')
+    // When we click on each nav__link, we remove the show-menu class
+    navMenu.classList.remove('show-menu')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">Home</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#program" class="nav__link">Program</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#choose" class="nav__link">Choose Us</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#pricing" class="nav__link">Pricing</a>
-                        </li>
 
-                        <div class="nav__link">
-                            <a href="#footer" class="button nav__button">Register Now</a>
-                        </div>
-                    </ul>
+/*=============== CHANGE BACKGROUND HEADER ===============*/
+const scrollHeader = () =>{
+    const header = document.getElementById('header')
+    // When the scroll is greater than 50 viewport height, add the bg-header class to the header tag
+    this.scrollY >= 50 ? header.classList.add('bg-header') 
+                       : header.classList.remove('bg-header')
+}
+window.addEventListener('scroll', scrollHeader)
 
-                    <div class="nav__close" id="nav-close">
-                        <i class="ri-close-line"></i>
-                    </div>
-                </div>
 
-                <!-- Toggle button -->
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="ri-menu-line"></i>
-                </div>
-            </nav>
-        </header>
-
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                <div class="home__container container grid">
-                    <div class="home__data">
-                        <h2 class="home__subtitle">MAKE YOUR</h2>
-                        <h1 class="home__title">BODY SHAPE</h1>
-                        <p class="home__description">
-                            In here we will help you to shape and build your ideal 
-                            body and live your life to the fullest.
-                        </p>
-                        <a href="#" class="button button__flex">
-                            Get Started <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-
-                    <div class="home__images">
-                        <img src="assets/img/home-img.png" alt="home image" class="home__img">
-
-                        <div class="home__triangle home__triangle-3"></div>
-                        <div class="home__triangle home__triangle-2"></div>
-                        <div class="home__triangle home__triangle-1"></div>
-                    </div>
-                </div>
-            </section>
-
-            <!--==================== LOGOS ====================-->
-            <section class="logos section">
-                <div class="logos__container container grid">
-                    <img src="assets/img/logo1.png" alt="logo image" class="logos__img">
-                    <img src="assets/img/logo2.png" alt="logo image" class="logos__img">
-                    <img src="assets/img/logo3.png" alt="logo image" class="logos__img">
-                    <img src="assets/img/logo4.png" alt="logo image" class="logos__img">
-                </div>
-            </section>
-
-            <!--==================== PROGRAM ====================-->
-            <section class="program section" id="program">
-                <div class="container">
-                    <div class="section__data">
-                        <h2 class="section__subtitle">Our Program</h2>
-                        <div class="section__titles">
-                            <h1 class="section__title-border">BUILD YOUR</h1>
-                            <h1 class="section__title">BEST BODY</h1>
-                        </div>
-                    </div>
-
-                    <div class="program__container grid">
-                        <article class="program__card">
-                            <div class="program__shape">
-                                <img src="assets/img/program1.png" alt="program image" class="program__img">
-                            </div>
-
-                            <h3 class="program__title">Flex Muscle</h3>
-
-                            <p class="program__description">
-                                Creating tension that's temporarily making the muscle 
-                                fibers smaller or contracted.
-                            </p>
-
-                            <a href="#" class="program__button">
-                                <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </article>
-
-                        <article class="program__card">
-                            <div class="program__shape">
-                                <img src="assets/img/program2.png" alt="program image" class="program__img">
-                            </div>
-
-                            <h3 class="program__title">Cardio Exercise</h3>
-
-                            <p class="program__description">
-                                Exercise your heart rate up and keeps it 
-                                up for a prolonged period of time.
-                            </p>
-
-                            <a href="#" class="program__button">
-                                <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </article>
-
-                        <article class="program__card">
-                            <div class="program__shape">
-                                <img src="assets/img/program3.png" alt="program image" class="program__img">
-                            </div>
-
-                            <h3 class="program__title">Basic Yoga</h3>
-
-                            <p class="program__description">
-                                Diaphragmatic this is the most common breathing 
-                                technique you'll find in yoga.
-                            </p>
-
-                            <a href="#" class="program__button">
-                                <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </article>
-
-                        <article class="program__card">
-                            <div class="program__shape">
-                                <img src="assets/img/program4.png" alt="program image" class="program__img">
-                            </div>
-
-                            <h3 class="program__title">Weight Lifting</h3>
-
-                            <p class="program__description">
-                                Attempts a maximum weight single lift of a 
-                                barbell loaded with weight plates.
-                            </p>
-
-                            <a href="#" class="program__button">
-                                <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <!--==================== CHOOSE US ====================-->
-            <section class="choose section" id="choose">
-                <div class="choose__overflow">
-                    <div class="choose__container container grid">
-                        <div class="choose__content">
-                            <div class="section__data">
-                                <h2 class="section__subtitle">Best Reason</h2>
-                                <div class="section__titles">
-                                    <h1 class="section__title-border">WHY</h1>
-                                    <h1 class="section__title">CHOOSE US ?</h1>
-                                </div>
-                            </div>
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
     
-                            <p class="choose__description">
-                                Choose your favorite class and start now. Remember the 
-                                only bad workout is the one you didn't do.
-                            </p>
+const scrollActive = () =>{
+  	const scrollY = window.pageYOffset
+
+	sections.forEach(current =>{
+		const sectionHeight = current.offsetHeight,
+			  sectionTop = current.offsetTop - 58,
+			  sectionId = current.getAttribute('id'),
+			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+		if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+			sectionsClass.classList.add('active-link')
+		}else{
+			sectionsClass.classList.remove('active-link')
+		}                                                    
+	})
+}
+window.addEventListener('scroll', scrollActive)
+
+
+/*=============== SHOW SCROLL UP ===============*/ 
+const scrollUp = () =>{
+	const scrollUp = document.getElementById('scroll-up')
+    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+						: scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+})
+
+sr.reveal(`.home__data, .footer__container, .footer__group`)
+sr.reveal(`.home__img`, {delay: 700, origin: 'bottom'})
+sr.reveal(`.logos__img, .program__card, .pricing__card`, {interval: 100})
+sr.reveal(`.choose__img, .calculate__content`, {origin: 'left'})
+sr.reveal(`.choose__content, .calculate__img`, {origin: 'right'})
+
+/*=============== CALCULATE JS ===============*/
+const calculateForm = document.getElementById('calculate-form'),
+      calculateCm = document.getElementById('calculate-cm'),
+      calculateKg = document.getElementById('calculate-kg'),
+      calculateMessage = document.getElementById('calculate-message')
+
+const calculateBmi = (e) =>{
+    e.preventDefault()
     
-                            <div class="choose__data">
-                                <div class="choose__group">
-                                    <h3 class="choose__number">200+</h3>
-                                    <p class="choose__subtitle">Total Members</p>
-                                </div>
-                                <div class="choose__group">
-                                    <h3 class="choose__number">50+</h3>
-                                    <p class="choose__subtitle">Best trainers</p>
-                                </div>
-                                <div class="choose__group">
-                                    <h3 class="choose__number">25+</h3>
-                                    <p class="choose__subtitle">Programs</p>
-                                </div>
-                                <div class="choose__group">
-                                    <h3 class="choose__number">100+</h3>
-                                    <p class="choose__subtitle">Awards</p>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="choose__images">
-                            <img src="assets/img/choose-img.png" alt="choose image" class="choose__img">
-    
-                            <div class="choose__triangle choose__triangle-1"></div>
-                            <div class="choose__triangle choose__triangle-2"></div>
-                            <div class="choose__triangle choose__triangle-3"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    // Check if the fields have a value
+    if(calculateCm.value === '' || calculateKg.value === ''){
+        // Add and remove color
+        calculateMessage.classList.remove('color-green')
+        calculateMessage.classList.add('color-red')
 
-            <!--==================== PRICING ====================-->
-            <section class="pricing section" id="pricing">
-                <div class="container">
-                    <div class="section__data">
-                        <h2 class="section__subtitle">Pricing</h2>
-                        <div class="section__titles">
-                            <h1 class="section__title-border">OUR</h1>
-                            <h1 class="section__title">SPECIAL PLAN</h1>
-                        </div>
-                    </div>
-                    
-                    <div class="pricing__container grid">
-                        <article class="pricing__card">
-                            <header class="pricing__header">
-                                <div class="pricing__shape">
-                                    <img src="assets/img/pricing1.png" alt="pricing image" class="pricing__img">
-                                </div>
-                                <h1 class="pricing__title">BASIC PACKAGE</h1>
-                                <h2 class="pricing__number">$120</h2>
-                            </header>
+        // Show message
+        calculateMessage.textContent = 'Fill in the Height and Weight 👨‍💻'
 
-                            <ul class="pricing__list">
-                                <li class="pricing__item">
-                                    <i class="ri-checkbox-circle-line"></i> 5 Days In A Week
-                                </li>
-                                <li class="pricing__item">
-                                    <i class="ri-checkbox-circle-line"></i> 01 Sweatshirt
-                                </li>
-                                <li class="pricing__item pricing__item-opacity">
-                                    <i class="ri-checkbox-circle-line"></i> 01 Bottle of Protein
-                                </li>
-                                <li class="pricing__item pricing__item-opacity">
-                                    <i class="ri-checkbox-circle-line"></i> Access to Videos
-                                </li>
-                                <li class="pricing__item pricing__item-opacity">
-                                    <i class="ri-checkbox-circle-line"></i> Muscle Stretching
-                                </li>
-                            </ul>
+        // Remove message three seconds
+        setTimeout(() => {
+            calculateMessage.textContent = ''
+        }, 3000);
+    }else{
+        // BMI Formula
+        const cm = calculateCm.value / 100,
+              kg = calculateKg.value,
+              bmi = Math.round(kg / (cm * cm))
 
-                            <a href="#" class="button button__flex pricing__button">
-                                Purchase Now <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </article>
+        // Show your health status
+        if(bmi < 18.5){
+            // Add color and display message
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😔`
+        } else if(bmi < 25){
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are healthy 🥳`
+        }else{
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are overweight 😔`
+        }
 
-                        <article class="pricing__card pricing__card-active">
-                            <header class="pricing__header">
-                                <div class="pricing__shape">
-                                    <img src="assets/img/pricing2.png" alt="pricing image" class="pricing__img">
-                                </div>
-                                <h1 class="pricing__title">PREMIUM PACKAGE</h1>
-                                <h2 class="pricing__number">$240</h2>
-                            </header>
+        // To clear the input field
+        calculateCm.value = ''
+        calculateKg.value = ''
 
-                            <ul class="pricing__list">
-                                <li class="pricing__item">
-                                    <i class="ri-checkbox-circle-line"></i> 5 Days In A Week
-                                </li>
-                                <li class="pricing__item">
-                                    <i class="ri-checkbox-circle-line"></i> 01 Sweatshirt
-                                </li>
-                                <li class="pricing__item">
-                                    <i class="ri-checkbox-circle-line"></i> 01 Bottle of Protein
-                                </li>
-                                <li class="pricing__item pricing__item-opacity">
-                                    <i class="ri-checkbox-circle-line"></i> Access to Videos
-                                </li>
-                                <li class="pricing__item pricing__item-opacity">
-                                    <i class="ri-checkbox-circle-line"></i> Muscle Stretching
-                                </li>
-                            </ul>
+        // Remove message four seconds
+        setTimeout(() => {
+            calculateMessage.textContent = ''
+        }, 4000);
+    }
+}
 
-                            <a href="#" class="button button__flex pricing__button">
-                                Purchase Now <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </article>
+calculateForm.addEventListener('submit', calculateBmi)
 
-                        <article class="pricing__card">
-                            <header class="pricing__header">
-                                <div class="pricing__shape">
-                                    <img src="assets/img/pricing3.png" alt="pricing image" class="pricing__img">
-                                </div>
-                                <h1 class="pricing__title">DIAMOND PACKAGE</h1>
-                                <h2 class="pricing__number">$420</h2>
-                            </header>
+/*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message'),
+      contactUser = document.getElementById('contact-user')
 
-                            <ul class="pricing__list">
-                                <li class="pricing__item">
-                                    <i class="ri-checkbox-circle-line"></i> 5 Days In A Week
-                                </li>
-                                <li class="pricing__item">
-                                    <i class="ri-checkbox-circle-line"></i> 01 Sweatshirt
-                                </li>
-                                <li class="pricing__item">
-                                    <i class="ri-checkbox-circle-line"></i> 01 Bottle of Protein
-                                </li>
-                                <li class="pricing__item">
-                                    <i class="ri-checkbox-circle-line"></i> Access to Videos
-                                </li>
-                                <li class="pricing__item">
-                                    <i class="ri-checkbox-circle-line"></i> Muscle Stretching
-                                </li>
-                            </ul>
+const sendEmail = (e) =>{
+    e.preventDefault()
 
-                            <a href="#" class="button button__flex pricing__button">
-                                Purchase Now <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </article>
-                    </div>
-                </div>
-            </section>
+    // Check if the field has a value
+    if(contactUser.value === ''){
+        // Add and remove color
+        contactMessage.classList.remove('color-green')
+        contactMessage.classList.add('color-red')
 
-            <!--==================== CALCULATE ====================-->
-            <section class="calculate section">
-                <div class="calculate__container container grid">
-                    <div class="calculate__content">
-                        <div class="section__titles">
-                            <h1 class="section__title-border">CALCULATE</h1>
-                            <h1 class="section__title">YOUR BMI</h1>
-                        </div>
-
-                        <p class="calculate__description">
-                            The body mass index (BMI) calculator calculates 
-                            body mass index from your weight and height.
-                        </p>
-
-                        <form action="" class="calculate__form" id="calculate-form">
-                            <div class="calculate__box">
-                                <input type="number" placeholder="Height" class="calculate__input" id="calculate-cm">
-                                <label for="" class="calculate__label">cm</label>
-                            </div>
-                            <div class="calculate__box">
-                                <input type="number" placeholder="Weight" class="calculate__input" id="calculate-kg">
-                                <label for="" class="calculate__label">kg</label>
-                            </div>
-     
-                            <button type="submit" class="button button__flex">
-                                Calculate Now <i class="ri-arrow-right-line"></i>
-                            </button>
-                        </form>
-
-                        <p class="calculate__message" id="calculate-message"></p>
-                    </div>
-                    <img src="assets/img/calculate-img.png" alt="calculate image" class="calculate__img">
-                </div>
-            </section>
-        </main>
-
-        <!--==================== FOOTER ====================-->
-        <footer class="footer section" id="footer">
-            <div class="footer__container container grid">
-                <div>
-                    <a href="#" class="footer__logo">
-                        <img src="assets/img/logo-nav.png" alt="logo"> BEROTOT
-                    </a>
-                    <p class="footer__description">
-                        Subscribe for company <br> updates below.
-                    </p>
-
-                    <form action="" class="footer__form" id="contact-form">
-                        <input type="email" name="user_email" placeholder="Your Email" class="footer__input" id="contact-user">
-                        <button type="submit" class="button">
-                            Subscribe
-                        </button>
-                    </form>
-
-                    <p class="footer__message" id="contact-message"></p>
-                </div>
-
-                <div class="footer__content">
-                    <div>
-                        <h3 class="footer__title">
-                            SERVICES
-                        </h3>
-
-                        <ul class="footer__links">
-                            <li>
-                                <a href="#" class="footer__link">Flex Muscle</a>
-                            </li>
-                            <li>
-                                <a href="#" class="footer__link">Cardio Exercise</a>
-                            </li>
-                            <li>
-                                <a href="#" class="footer__link">Basic Yoga</a>
-                            </li>
-                            <li>
-                                <a href="#" class="footer__link">Weight Lifting</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="footer__title">
-                            PRICING
-                        </h3>
-
-                        <ul class="footer__links">
-                            <li>
-                                <a href="#" class="footer__link">Basic</a>
-                            </li>
-                            <li>
-                                <a href="#" class="footer__link">Premium</a>
-                            </li>
-                            <li>
-                                <a href="#" class="footer__link">Diamond</a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="footer__title">
-                            COMPANY
-                        </h3>
-
-                        <ul class="footer__links">
-                            <li>
-                                <a href="#" class="footer__link">About Us</a>
-                            </li>
-                            <li>
-                                <a href="#" class="footer__link">Careers</a>
-                            </li>
-                            <li>
-                                <a href="#" class="footer__link">Customers</a>
-                            </li>
-                            <li>
-                                <a href="#" class="footer__link">Partners</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="footer__group">
-                    <ul class="footer__social">
-                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
-                            <i class="ri-facebook-circle-fill"></i>
-                        </a>
-                        <a href="https://twitter.com/" target="_blank" class="footer__social-link">
-                            <i class="ri-twitter-fill"></i>
-                        </a>
-                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
-                            <i class="ri-instagram-line"></i>
-                        </a>    
-                    </ul>
-    
-                    <span class="footer__copy">
-                        &#169; Copyright Nikhil Gupta. All rights reserved
-                    </span>
-                </div>
-            </div>
-        </footer>
-
-
-        <!--========== SCROLL UP ==========-->
-        <a href="#" class="scrollup" id="scroll-up"> 
-            <i class="ri-arrow-up-line"></i>
-        </a>
-
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src="assets/js/scrollreveal.min.js"></script>
-
-        <!--=============== EMAIL JS ===============-->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        // Show message
+        contactMessage.textContent = 'You must enter your email ☝'
         
-        <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
-    </body>
-</html>
+        // Remove message three seconds
+        setTimeout(() => {
+            contactMessage.textContent = ''
+        }, 3000);
+    }else{
+        // serviceID - templateID - #form - publicKey
+        emailjs.sendForm('', '', '#contact-form', '')
+            .then(() => {
+                // Show message and add color
+                contactMessage.classList.add('color-green')
+                contactMessage.textContent = 'You registered successfully 💪'
+
+                // Remove message after three seconds
+                setTimeout(() => {
+                    contactMessage.textContent = ''
+                }, 3000);
+
+            }, (error) => {
+                alert('OOPS! SOMETHING HAS FAILED...', error)
+            })
+
+        // To clear the input field
+        contactUser.value = ''
+    }
+}
+contactForm.addEventListener('submit', sendEmail)

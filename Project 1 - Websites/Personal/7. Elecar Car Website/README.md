@@ -1,8 +1,8 @@
 # 🚘 Responsive Car website
-## [Visit Live Site](https://rasan3-1416.github.io/Elecar-car-website/)
-### 🚘 Elecar - Car website
 
-The project I clone from [Bedimcode](https://www.youtube.com/c/Bedimcode) and website template: [Responsive Car Website](https://youtu.be/bDngcOQ8Img?si=OXiCUsj7li6BvK2O)
+#
+
+### 🚘 Elecar - Car website
 
 - Responsive Car website Using HTML CSS & JavaScript
 - Contains animations when scrolling.
